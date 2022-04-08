@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import cv2
 st.text('This is some text.')
 st.markdown('Streamlit is **_really_ cool**.')
 st.write(1234)
@@ -40,3 +41,17 @@ st.write("I'm ", age, 'years old')
 
 siderbar = st.sidebar
 siderbar.markdown('我是一个sidebar')
+image = cv2.imread('000000000785.jpg')
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+print(image.shape)
+st.image(image, caption='1',
+        use_column_width=True)
+# cap = cv2.VideoCapture("Arrow_step.mp4")
+# while cap.isOpened():
+#     ret, image = cap.read()
+    
+#     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+#     st.image(image, caption='1',
+#          use_column_width=True)
+
+# cap.release()
